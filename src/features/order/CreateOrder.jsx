@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../server/apiRestaurant";
+import Button from "../../ui/Button";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -45,16 +46,18 @@ function CreateOrder() {
     <div>
       <h2>Ready to order? Let's go!</h2>
 
-      <Form method="POST">
+      <Form method="POST" action="/order/new">
         <div>
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input type="text" name="customer" required  className="input"/>
         </div>
 
         <div>
           <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" required />
+          <div> 
+            <input type="tel" name="phone" required
+            className="input"
+            />
           </div>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
@@ -62,7 +65,9 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" required
+            className="input"
+            />
           </div>
         </div>
 
@@ -73,16 +78,20 @@ function CreateOrder() {
             id="priority"
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
-          />
+            className="w-6 h-6 accent-yellow-400 focus:outline-none focus:first-letter:ring focus:ring-yellow-400"
+            />
+          
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
-            {" "}
+          {/* <button disabled={isSubmitting} type="submit" className="buttons">
             {isSubmitting ? "Placing order...." : "Order now"}
-          </button>
+          </button> */}
+          <Button disabled={isSubmitting} type="submit"> 
+            {isSubmitting ? "Placing order...." : "Order now"}
+          </Button>
         </div>
       </Form>
     </div>
@@ -105,6 +114,6 @@ export async function action({ request }) {
   }
   // If everything is fine, create the order
   const newOrder = await createOrder(order);
-  return redirect(`/order/${newOrder.id}`);
+    return redirect(`/order/${newOrder.id}`);
 }
 export default CreateOrder;
