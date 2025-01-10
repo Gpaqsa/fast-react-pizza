@@ -7,13 +7,13 @@ function Menu() {
   const menu = useLoaderData();
   
   return (
-    <div className="m-16 grid grid-cols-3 gap-4">
-      <ul>
+    <>
+      <ul className="divide-y divide-stone-200 px-2">
         {menu.map((pizza) => (
           <Menuitem pizza={pizza} key={pizza.id} />
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
