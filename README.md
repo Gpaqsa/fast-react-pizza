@@ -57,7 +57,7 @@ Fast Order Pizza is a modern web application for ordering pizzas quickly and eff
     │   ├── store.js         # Redux store configuration
 
 # Host Link
-    Live Demo: 
+    Live Demo: https://fastorder-pizza.netlify.app/
 
 
 # Author
