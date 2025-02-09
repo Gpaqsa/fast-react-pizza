@@ -56,6 +56,10 @@ Fast Order Pizza is a modern web application for ordering pizzas quickly and eff
     │   ├── main.jsx         # Entry point for the React app
     │   ├── store.js         # Redux store configuration
 
+# Host Link
+    Live Demo: 
+
+
 # Author
 
     Giorgi Paksashvili (Gpaqsa) - https://github.com/Gpaqsa
