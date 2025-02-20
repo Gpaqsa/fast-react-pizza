@@ -1,5 +1,5 @@
 {
-  "name": "fast-react-pizza",
+  "name": "clear",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
+    "axios": "^1.7.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.2.0",
@@ -34,5 +35,9 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.5"
-  }
+  },
+  "description": "Fast Order Pizza is a modern web application for ordering pizzas quickly and efficiently. Built with Vite and React, it features a seamless user experience powered by Redux for state management and styled using Tailwind CSS.",
+  "main": "eslint.config.js",
+  "author": "",
+  "license": "ISC"
 }
